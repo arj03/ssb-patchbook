@@ -1,0 +1,18 @@
+{
+  "name": "ssb-patchbook",
+  "description": "scuttlebot plugin for getting reduced 'patchbook' state",
+  "version": "0.1.0",
+  "homepage": "https://github.com/arj03/ssb-patchbook",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arj03/ssb-patchbook/ssb-tags.git"
+  },
+  "dependencies": {
+    "flumeview-reduce": "^1.3.13",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": "Anders Rune Jensen",
+  "license": "Beerware"
+}
