@@ -33,7 +33,6 @@ function reduce(result, msg) {
   const { author, content } = msg.value
   
   if (content.type == 'bookclub') {
-    console.log("got book", content.title)
     var book = {
       key: msg.key,
       common: content,
@@ -43,12 +42,9 @@ function reduce(result, msg) {
   }
   else if (content.type == 'post')
   {
-    console.log("got book comment")
-    
     Object.values(view.value.value).forEach(book => {
       Object.values(book.subjective).forEach(s => {
         if (content.root in s.allKeys) {
-          console.log("on ", book.title)
           s.comments.push(msg.value)
         }
       })
@@ -56,8 +52,6 @@ function reduce(result, msg) {
   }
   else
   {
-    console.log("got book update", view.value.value[content.about].common.title)
-
     const { rating, ratingMax, ratingType, shelve, genre, review } = msg.value.content
 
     let book = view.value.value[content.about]
