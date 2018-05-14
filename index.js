@@ -50,7 +50,7 @@ function reduce(result, msg) {
       })
     })
   }
-  else
+  else // about
   {
     const { rating, ratingMax, ratingType, shelve, genre, review } = msg.value.content
 
