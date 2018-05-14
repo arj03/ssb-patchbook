@@ -13,7 +13,7 @@ module.exports = {
   },
   init: function (ssbServer, config) {
     view = ssbServer._flumeUse('patchbook', flumeView(
-      16, // version
+      18, // version
       reduce,
       map,
       null, //codec
@@ -52,7 +52,7 @@ function reduce(result, msg) {
   }
   else // about
   {
-    const { rating, ratingMax, ratingType, shelve, genre, review } = msg.value.content
+    const { rating, ratingMax, ratingType, shelve, genre, review } = content
 
     let book = view.value.value[content.about]
 
@@ -75,9 +75,9 @@ function reduce(result, msg) {
       updateSubjectives(view.value.value)
 
     } else
-      book.common = Object.assign({}, book.common, msg.value.content)
+      book.common = Object.assign({}, book.common, content)
 
-    result[msg.key] = book
+    result[content.about] = book
   }
 
   return result
